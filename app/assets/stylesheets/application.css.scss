@@ -46,6 +46,7 @@ body {
 
 
 
+
 /* Index page styling*/
 .box .index-body {
   padding: 19px;
@@ -55,8 +56,9 @@ body {
   padding: 19px;
 }
 
-/* Show page styling */
 
+
+/* Show page styling */
 #side-bar {
   margin-left: 0px;
   min-height: 300px;
@@ -64,6 +66,13 @@ body {
   background-color: whiteSmoke;
 }
 
-#actions button, #tags {
+
+#tags {
+  padding-bottom: 2px;
+  margin: 5px;
+}
+
+
+#actions button, #actions #tags {
   margin: 20px;
 }
