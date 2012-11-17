@@ -1,0 +1,13 @@
+.container.span3
+  = form_for [@pitch, @participation_request] do |f|
+    %div
+      .field
+        = f.label :email
+        = f.text_field :email, { placeholder: 'email@example.com' }
+    %div
+      .field
+        = f.label :message
+        = f.text_area :message, { placeholder: 'How do you want to help?' }
+    %div
+      .actions
+        = f.submit 'Send', { class: 'btn btn-primary slim-button pull-right' }

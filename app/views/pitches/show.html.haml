@@ -4,7 +4,6 @@
 %header.page-header
   %hgroup
     %h1
-      Title:
       = @pitch.title
 
   %p#location
@@ -17,9 +16,10 @@
 #side-bar.span3
   #actions
     %button.btn.btn-primary.btn-large{:name => "build"}
-      Build it!
-    %button.btn.btn-info{:name => "follow"}
-      Tell me when it starts!
+      Get Involved!
+    .hide= render partial: 'participation_requests/form'
+
+
   #tags
     - @pitch.skill_list.each do |skill|
       %span.label.label-info= skill

@@ -14,6 +14,7 @@ class PitchesController < ApplicationController
   # GET /pitches/1.json
   def show
     @pitch = Pitch.find(params[:id])
+    @participation_request = @pitch.participation_requests.build
 
     respond_to do |format|
       format.html # show.html.erb
