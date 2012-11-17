@@ -11,8 +11,6 @@
     Location:
     = @pitch.location
 
-<<<<<<< HEAD
-
 #video.span8
   Video url:
   = @pitch.video_url
@@ -23,19 +21,10 @@
       Build it!
     %button.btn.btn-info{:name => "follow"}
       Tell me when it starts!
-
-
-
-#video.span8 Video url:
-= @pitch.video_url
-
-#side-bar.span4.offset8
-  #information
-    %button{:name => "build"} Build it!
-    %button{:name => "follow"} Tell me when it starts!
   #tags
     - @pitch.skill_list.each do |skill|
       %span.label.label-info= skill
+
 
 %section.span8#description
   Description:
