@@ -19,7 +19,7 @@
   <div class="navbar-inner">
     <a class="brand" href="/">PitchPatch</a>
     <ul class="nav">
-      <li><%= link_to 'New Pitch', new_pitch_path%></li>
+      <li><span class="btn btn-small"><%= link_to 'Pitch in!', new_pitch_path%></span></li>
     </ul>
   </div>
 </div>
@@ -32,8 +32,14 @@
 <!-- Footer -->
 <footer class="footer">
 <div class="container">
-    <p><a href="https://github.com/jeffbr13/inception">PitchPatch</a> development version.</p>
-    <p>Copyright (C) 2012</p>
+    <div class="span3">
+        <p><a href="https://github.com/jeffbr13/inception">PitchPatch</a> development version.</p>
+        <p>Copyright © 2012.</p>
+    </div>
+    <div class="span3 pull-right">
+        <p>Keep up to date on <a href="https://www.facebook.com/pages/PitchPatch/474280455928477">Facebook</a>.</p>
+        <p>Follow us on <a href="https://twitter.com/pitchpatchco">Twitter</a>! <small>(Don't be creepy.)</small></p>
+    </div>
 </div>
 </footer>
 
