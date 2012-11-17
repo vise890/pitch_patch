@@ -20,3 +20,4 @@ end
 
 gem 'jquery-rails'
 
+gem "best_in_place", "~> 1.1.2"
