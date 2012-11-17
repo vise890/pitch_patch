@@ -3,6 +3,8 @@ class Pitch < ActiveRecord::Base
   acts_as_taggable
   acts_as_taggable_on :skills, :domains
 
+  has_many :participation_requests, dependent: :destroy
+
   validates :title, presence: true
   validates :description, presence: true
   validates :video_url, presence: true

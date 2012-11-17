@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121117151803) do
+ActiveRecord::Schema.define(:version => 20121117201016) do
+
+  create_table "participation_requests", :force => true do |t|
+    t.string   "email"
+    t.integer  "pitch_id"
+    t.string   "message"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "pitches", :force => true do |t|
     t.string   "title"
