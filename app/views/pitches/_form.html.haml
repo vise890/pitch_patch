@@ -6,26 +6,40 @@
         - @pitch.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    = f.label :description
-    = f.text_area :description
-  .field
-    = f.label :video_url
-    = f.text_field :video_url
-  .field
-    = f.label :location
-    = f.text_field :location
-  .field
-    = f.label :email
-    = f.text_field :email
-  .field
-    = f.label :skill_list
-    = f.text_field :skill_list
-  .field
-    = f.label :domain_list
-    = f.text_field :domain_list
-  .actions
-    = f.submit 'Save'
+  %div
+    .field.input-block-level
+      = f.label :title
+      = f.text_field :title
+    .span.help-inline
+      A descriptive title for your Pitch
+  %div
+    .field.input-block-level
+      = f.label :description
+      = f.text_area :description
+  %div
+    .field
+      = f.label :video_url
+      = f.text_field :video_url
+  %div
+    .span.help-inline
+      %img{:src => "http://s.ytimg.com/yt/img/creators_corner/YouTube/youtube_32x32.png" }
+      You Tube URL for your Pitch (eg: http://youtu.be/xMc_t33AZmI)
+  %div
+    .field
+      = f.label :location
+      = f.text_field :location
+  %div
+    .field
+      = f.label :email
+      = f.text_field :email
+  %div
+    .field
+      = f.label :skill_list
+      = f.text_field :skill_list
+  %div
+    .field
+      = f.label :domain_list
+      = f.text_field :domain_list
+  %div
+    .actions
+      = f.submit 'Save'
