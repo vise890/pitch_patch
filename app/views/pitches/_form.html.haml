@@ -8,43 +8,60 @@
 
   %div.control-group
     .field
+      .alert.pull-right
+        Should be simple, short and memorable.
+        %br
+        Imagine explaining your pitch in a Tweet.
       = f.label :title
       = f.text_field :title
-    %p.help-inline
-      A descriptive title for your Pitch.
+      
 
-  %div
+  %div.control-group
     .field
+      .alert.pull-right
+        Expand on your pitch. <br />Stay focused and be clear on what your <br />project hopes to accomplish.
+        %br
+        We recommend answering the following questions:
+        %ul
+          %liWho am I?</li>
+          %liWhat is the problem?
+          %liWhat is my solution?
+          %liWhat help do I need?
       = f.label :description
       = f.text_area :description
 
-  %div
-    %p.help-inline
-      (todo)
-  %div
+  %div.control-group
     .field
+      .alert.pull-right
+        You Tube URL for your Pitch
       = f.label :video_url
       = f.text_field :video_url
-  %div
-    %p.help-inline
-      You Tube URL for your Pitch (eg: http://youtu.be/xMc_t33AZmI)
-  %div
+      
+  %div.control-group
     .field
+      .alert.pull-right
+        Are you looking to connect with 
+        %br
+        people in a specific location?
       = f.label :location
       = f.text_field :location
-  %div
+      
+  %div.control-group
     .field
       = f.label :email
       = f.text_field :email
-  %div
+      
+  %div.control-group
     .field
       = f.label :skill_list
       = f.text_field :skill_list
-  %div
+      
+  %div.control-group
     .field
       = f.label :domain_list
       = f.text_field :domain_list
-  %div
+      
+  %div.control-group
     .actions
       = f.submit 'Save', {class: "btn btn-primary slim-button"}
 
