@@ -85,4 +85,10 @@
         }).blur(function() {
           $(this).parent().find(".alert").hide();
         });
+        
+        $("textarea").focus(function() {
+          $(this).parent().find(".alert").fadeIn('slow');
+        }).blur(function() {
+          $(this).parent().find(".alert").hide();
+        });
   });
