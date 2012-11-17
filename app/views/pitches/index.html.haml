@@ -4,12 +4,12 @@
       Current pitches:
 
 
-%ul.span10
+%ul#pitches.span10
   - @pitches.each do |pitch|
     %div.pitch.row-fluid.box
 
-      %span.index-video.span2
-        %iframe{:width => "130", :height => "130", :src => pitch.video_url, :title => "YouTube video player", :allowscriptaccess => "always", :allowFullScreen => "true", :frameborder => "0"}
+      %span.index-video.span3
+        %iframe{:width => "180", :height => "150", :src => pitch.video_url, :title => "YouTube video player", :allowscriptaccess => "always", :allowFullScreen => "true", :frameborder => "0"}
 
       %span.index-body.span6
         %h2
