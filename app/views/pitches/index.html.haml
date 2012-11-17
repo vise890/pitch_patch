@@ -4,32 +4,28 @@
       Listing pitches:
 
 
-%ul
-
-
-
-%table
-  %tr
-    %th Title
-    %th Description
-    %th Video url
-    %th Location
-    %th User
-    %th
-    %th
-    %th
-
+%ul.span10
   - @pitches.each do |pitch|
-    %tr
-      %td= pitch.title
-      %td= pitch.description
-      %td= pitch.video_url
-      %td= pitch.location
-      %td= pitch.user_id
-      %td= link_to 'Show', pitch
-      %td= link_to 'Edit', edit_pitch_path(pitch)
-      %td= link_to 'Destroy', pitch, method: :delete, data: { confirm: 'Are you sure?' }
+    %div.pitch.row-fluid.well
 
-%br
+      %span.index-video.span2
+        = pitch.video_url
 
-= link_to 'New Pitch', new_pitch_path
+
+      %span.index-body.span6
+        %h2
+          = link_to pitch.title, pitch
+
+
+      %span.index-details.span2
+        #tags
+          - pitch.skill_list.each do |skill|
+            %span.label.label-info= skill
+        %p.location
+          = pitch.location
+        %p.edit
+          / %span= link_to pitch.title, pitch
+          / %span= link_to 'Edit', edit_pitch_path(pitch)
+          / %span= link_to 'Destroy', pitch, method: :delete, data: { confirm: 'Are you sure?' }
+
+
