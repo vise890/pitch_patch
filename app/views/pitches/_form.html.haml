@@ -8,7 +8,7 @@
 
   %div.control-group
     .field
-      .alert.alert-info.pull-right
+      .alert.alert-info.hide.pull-right
         Should be simple, short and memorable.
         %br
         Imagine explaining your pitch in a Tweet.
@@ -18,7 +18,7 @@
 
   %div.control-group
     .field
-      .alert.alert-info.pull-right
+      .alert.alert-info.hide.pull-right
         Expand on your pitch. <br />Stay focused and be clear on what your <br />project hopes to accomplish.
         %br
         We recommend answering the following questions:
@@ -36,14 +36,14 @@
 
   %div.control-group
     .field
-      .alert.alert-info.pull-right
+      .alert.alert-info.hide.pull-right
         You Tube URL for your Pitch
       = f.label :video_url
       = f.text_field :video_url
       
   %div.control-group
     .field
-      .alert.alert-info.pull-right
+      .alert.alert-info.hide.pull-right
         Are you looking to connect with 
         %br
         people in a specific location?
@@ -80,4 +80,7 @@
           ],
 
       });
+        $("#input").focus(function() {
+          $(this).parent().find(".alert").('slow');
+        });
   });
