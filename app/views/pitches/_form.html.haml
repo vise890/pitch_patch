@@ -14,7 +14,7 @@
         Imagine explaining your pitch in a Tweet.
       = f.label :title
       = f.text_field :title
-      
+
 
   %div.control-group
     .field
@@ -40,31 +40,31 @@
         You Tube URL for your Pitch
       = f.label :video_url
       = f.text_field :video_url
-      
+
   %div.control-group
     .field
       .alert.alert-info.hide.pull-right
-        Are you looking to connect with 
+        Are you looking to connect with
         %br
         people in a specific location?
       = f.label :location
       = f.text_field :location
-      
+
   %div.control-group
     .field
       = f.label :email
       = f.text_field :email
-      
+
   %div.control-group
     .field
       = f.label :skill_list
       = f.text_field :skill_list
-      
+
   %div.control-group
     .field
       = f.label :domain_list
       = f.text_field :domain_list
-      
+
   %div.control-group
     .actions
       = f.submit 'Save', {class: "btn btn-primary slim-button"}
@@ -80,7 +80,7 @@
           ],
 
       });
-        $("#input").focus(function() {
+        $("input").focus(function() {
           $(this).parent().find(".alert").fadeIn('slow');
         }).blur(function() {
           $(this).parent().find(".alert").hide();
