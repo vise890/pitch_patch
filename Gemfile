@@ -3,7 +3,14 @@ source 'http://rubygems.org'
 gem 'rails', '3.2.8'
 gem 'bootstrap-sass', '2.1'
 
-gem 'sqlite3'
+group :development do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+end
+
 gem 'acts-as-taggable-on', '~> 2.3.1'
 
 # Gems used only for assets and not required
