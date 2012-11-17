@@ -62,8 +62,7 @@
       .alert.alert-info.hide.pull-right
         What skills are you looking for?
       = f.label :skill_list
-      = f.hidden_field :skill_list
-      %ul{:id => "skillsTags"}        
+      = f.text_field :skill_list
 
   %div.control-group
     .field
@@ -71,7 +70,7 @@
         Broadly speaking what Sector does your idea fit into?
       = f.label :domain_list
       = f.text_field :domain_list, :data => {:provide => "typeahead", :source => '["Activism","Advertising","Alternative Economy","API","Automotive","Business Productivity","Communication","Conferencing","Consumer Interest","Crowdfunding","Custom Manufacturing","Customer Service","Data Analysis","Dating &amp; Relationships","Developer Productivity","Discovery","E-commerce","Education","Energy","Entrepreneurs &amp; Business","Facebook Apps","Financial","Food &amp; Agriculture","Games","Government","Greater Good","Green Technology","Health &amp; Wellness","Healthcare","Home Automation","Lead Generation","Lifestyle","Local Search","Marketing","Media","Mobile","Music","Non-Profit","Notifications &amp; Alerts","Open Source","Personal Productivity","Realtime Search","Research","Restaurants","Retail","Sales &amp; CRM","Service","Social","Transportation","Unified Communications","Other"]'}
-     %span.help-inline
+    %span.help-inline
       Broadly speaking what Sector does your idea fit into? (Use commas to separate different skills). 
   %div.control-group
     .actions
@@ -100,5 +99,5 @@
           $(this).parent().find(".alert").hide();
         });
 
-        $("#pitch_skill_list").tagsInput();
+        // $("#pitch_skill_list").tagsInput();
   });
