@@ -13,19 +13,18 @@
     .span.help-inline
       A descriptive title for your Pitch.
   %div
-    .field.input-block-level
+    .field
       = f.label :description
       = f.text_area :description
   %div
-    .span.help-inline
+    .help-inline
       (todo)
   %div
     .field
       = f.label :video_url
       = f.text_field :video_url
   %div
-    .span.help-inline
-      %img.pull_left{:src => "http://s.ytimg.com/yt/img/creators_corner/YouTube/youtube_32x32.png" }
+    .help-inline
       You Tube URL for your Pitch (eg: http://youtu.be/xMc_t33AZmI)
   %div
     .field
@@ -46,3 +45,16 @@
   %div
     .actions
       = f.submit 'Save'
+
+
+:javascript
+  $(function() {
+      $("#pitch_description").htmlarea({
+          // Override/Specify the Toolbar buttons to show
+          toolbar: [
+              ["bold", "italic", "underline", "|", "p"],
+              ["link", "unlink", "|", "image"]
+          ],
+
+      });
+  });
