@@ -8,43 +8,72 @@
 
   %div.control-group
     .field
+      .alert.alert-info.hide.pull-right
+        Should be simple, short and memorable.
+        %br
+        Imagine explaining your pitch in a Tweet.
       = f.label :title
       = f.text_field :title
-    %p.help-inline
-      A descriptive title for your Pitch.
 
-  %div
+
+  %div.control-group
     .field
+      .alert.alert-info.hide.pull-right
+        Expand on your pitch. <br />Stay focused and be clear on what your <br />project hopes to accomplish.
+        %br
+        We recommend answering the following questions:
+        %ul
+          %li
+            Who am I?
+          %li
+            What is the problem?
+          %li
+            What is my solution?
+          %li
+            What help do I need?
       = f.label :description
       = f.text_area :description
 
-  %div
-    %p.help-inline
-      (todo)
-  %div
+  %div.control-group
     .field
+      .alert.alert-info.hide.pull-right
+        You Tube URL for your Pitch
       = f.label :video_url
       = f.text_field :video_url
-  %div
-    %p.help-inline
-      You Tube URL for your Pitch (eg: http://youtu.be/xMc_t33AZmI)
-  %div
+
+  %div.control-group
     .field
+      .alert.alert-info.hide.pull-right
+        Are you looking to connect with
+        %br
+        people in a specific location?
       = f.label :location
       = f.text_field :location
-  %div
+
+  %div.control-group
     .field
+      .alert.alert-info.hide.pull-right
+        Your email address
       = f.label :email
       = f.text_field :email
-  %div
+
+  %div.control-group
     .field
+      .alert.alert-info.hide.pull-right
+        What skills are you looking for?
       = f.label :skill_list
-      = f.text_field :skill_list
-  %div
+      = f.hidden_field :skill_list
+      %ul{:id => "skillsTags"}        
+
+  %div.control-group
     .field
+      .alert.alert-info.hide.pull-right
+        Broadly speaking what Sector does your idea fit into?
       = f.label :domain_list
-      = f.text_field :domain_list
-  %div
+      = f.text_field :domain_list, :data => {:provide => "typeahead", :source => '["Activism","Advertising","Alternative Economy","API","Automotive","Business Productivity","Communication","Conferencing","Consumer Interest","Crowdfunding","Custom Manufacturing","Customer Service","Data Analysis","Dating &amp; Relationships","Developer Productivity","Discovery","E-commerce","Education","Energy","Entrepreneurs &amp; Business","Facebook Apps","Financial","Food &amp; Agriculture","Games","Government","Greater Good","Green Technology","Health &amp; Wellness","Healthcare","Home Automation","Lead Generation","Lifestyle","Local Search","Marketing","Media","Mobile","Music","Non-Profit","Notifications &amp; Alerts","Open Source","Personal Productivity","Realtime Search","Research","Restaurants","Retail","Sales &amp; CRM","Service","Social","Transportation","Unified Communications","Other"]'}
+     %span.help-inline
+      Broadly speaking what Sector does your idea fit into? (Use commas to separate different skills). 
+  %div.control-group
     .actions
       = f.submit 'Save', {class: "btn btn-primary slim-button"}
 
@@ -59,4 +88,17 @@
           ],
 
       });
+        $("input").focus(function() {
+          $(this).parent().find(".alert").fadeIn('slow');
+        }).blur(function() {
+          $(this).parent().find(".alert").hide();
+        });
+
+        $("textarea").focus(function() {
+          $(this).parent().find(".alert").fadeIn('slow');
+        }).blur(function() {
+          $(this).parent().find(".alert").hide();
+        });
+
+        $("#pitch_skill_list").tagsInput();
   });
