@@ -62,7 +62,8 @@
       .alert.alert-info.hide.pull-right
         What skills are you looking for?
       = f.label :skill_list
-      = f.text_field :skill_list
+      = f.hidden_field :skill_list
+      %ul{:id => "skillsTags"}        
 
   %div.control-group
     .field
@@ -99,5 +100,7 @@
           $(this).parent().find(".alert").hide();
         });
         
-        $("#pitch_skill_list").tagit();
+        $("#skillsTags").tagit({
+            itemName: "pitch_skill_list"
+        });
   });
