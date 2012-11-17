@@ -11,6 +11,7 @@
     Location:
     = @pitch.location
 
+<<<<<<< HEAD
 
 #video.span8
   Video url:
@@ -25,11 +26,22 @@
 
 
 
+#video.span8 Video url:
+= @pitch.video_url
+
+#side-bar.span4.offset8
+  #information
+    %button{:name => "build"} Build it!
+    %button{:name => "follow"} Tell me when it starts!
+  #tags
+    - @pitch.skill_list.each do |skill|
+      %span.label.label-info= skill
+
 %section.span8#description
   Description:
   = @pitch.description
 
 .span2.offset10
-= link_to 'Edit', edit_pitch_path(@pitch)
-\|
-= link_to 'Back', pitches_path
+  = link_to 'Edit', edit_pitch_path(@pitch)
+  \|
+  = link_to 'Back', pitches_path
