@@ -1,4 +1,4 @@
-= form_for @pitch do |f|
+= form_for @pitch, :html => {:class => "form-horizontal"} do |f|
   - if @pitch.errors.any?
     #error_explanation
       %h2= "#{pluralize(@pitch.errors.count, "error")} prohibited this pitch from being saved:"
@@ -6,12 +6,12 @@
         - @pitch.errors.full_messages.each do |msg|
           %li= msg
 
-  %div
-    .field.input-block-level
+  %div.control-group
+    .field
       = f.label :title
       = f.text_field :title
     .span.help-inline
-      A descriptive title for your Pitch. 
+      A descriptive title for your Pitch.
   %div
     .field.input-block-level
       = f.label :description
@@ -19,7 +19,7 @@
   %div
     .span.help-inline
       (todo)
-  %div  
+  %div
     .field
       = f.label :video_url
       = f.text_field :video_url
