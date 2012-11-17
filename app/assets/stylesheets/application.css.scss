@@ -14,12 +14,16 @@
 @import "bootstrap";
 
 
+
+
 body {
   padding-top: 50px;
 }
 
+
+
 .footer {
-  padding: 70px 0;
+  padding: 40px 0;
   margin-top: 70px;
   border-top: 1px solid #E5E5E5;
   background-color: whiteSmoke;
@@ -42,17 +46,33 @@ body {
 
 
 
+
 /* Index page styling*/
 .box .index-body {
-    padding: 19px;
+  padding: 19px;
 }
 
 .box .index-details {
-    padding: 19px;
+  padding: 19px;
 }
 
-/* Show page styling */
 
+
+/* Show page styling */
 #side-bar {
-      background-color: whiteSmoke;
+  margin-left: 0px;
+  min-height: 300px;
+  border: 1px solid #e3e3e3;
+  background-color: whiteSmoke;
+}
+
+
+#tags {
+  padding-bottom: 2px;
+  margin: 5px;
+}
+
+
+#actions button, #actions #tags {
+  margin: 20px;
 }
