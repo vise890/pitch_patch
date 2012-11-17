@@ -46,3 +46,17 @@
   %div
     .actions
       = f.submit 'Save'
+      
+
+<script type="text/javascript">    
+    $(function() {
+        $("#txtCustomHtmlArea").htmlarea({
+            // Override/Specify the Toolbar buttons to show
+            toolbar: [
+                ["bold", "italic", "underline", "|", "p"],
+                ["link", "unlink", "|", "image"]
+            ],
+
+        });
+    });
+</script>
