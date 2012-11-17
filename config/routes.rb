@@ -1,6 +1,7 @@
 Inception::Application.routes.draw do
   resources :pitches
 
+  root to: 'pitches#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
