@@ -1,6 +1,5 @@
 %p#notice= notice
 
-
 %header.page-header
   %hgroup
     %h1
@@ -16,16 +15,19 @@
 
   #actions
 
-    %button.btn.btn-primary.btn-large{:name => "build"}
-      Build it!
+    %button.btn.btn-primary.btn-large#get-involved-btn
+      Get Involved!
+
+    .hide.alert.alert-success#get-involved-success Nice, we'll let you know how you can help!
+
+    .hide.alert.alert-error#get-involved-failure Something went wrong, check that the email is valid
+    .hide#get-involved-container= render partial: 'participation_requests/form'
 
     #twitter
       %a.twitter-share-button{:href => "://twitter.com/share", :data => {:url => "http://www.pitchpatch.co", :via => "@pitchpatchapp", :lang => "en"}}
       :javascript
         !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 
-    %button.btn.btn-info.muted{:name => "follow"}
-      Tell me when it starts!
 
   #tags.well.well-small
     %p I need a...
@@ -35,3 +37,6 @@
 
 %section.span8#description
   = raw @pitch.description
+
+:javascript
+  var pitch_participation_requests_path = "#{pitch_participation_requests_path @pitch}";
