@@ -85,7 +85,7 @@ body {
 
 
 
-#side-bar #tags .tag {
+#side-bar #tags .tag, .pitch .tags .tag {
   margin-right: 4px;
   margin-bottom: 6px;
   background-color: #FFF39B;
@@ -99,7 +99,7 @@ body {
 
 
 
-#tags {
+#tags, .tags {
   margin: 20px;
 }
 
