@@ -3,26 +3,33 @@
 
 %header
   %hgroup
-    %h1.page-header Title:
-    = @pitch.title
+    %h1.page-header
+      Title:
+      = @pitch.title
 
-  %p Location:
+  %p
+    Location:
     = @pitch.location
 
 
 
-#video.span8 Video url:
-= @pitch.video_url
+#video.span8
+  Video url:
+  = @pitch.video_url
 
 #side-bar.span4.offset8
   #information
-    %button{:name => "build"} Build it!
-    %button{:name => "follow"} Tell me when it starts!
+    %button{:name => "build"}
+      Build it!
+    %button{:name => "follow"}
+      Tell me when it starts!
 
 
 
-%section.span8#description Description:
+%section.span8#description
+  Description:
   = @pitch.description
+
 = link_to 'Edit', edit_pitch_path(@pitch)
 \|
 = link_to 'Back', pitches_path
