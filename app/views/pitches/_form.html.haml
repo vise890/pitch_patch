@@ -52,18 +52,25 @@
 
   %div.control-group
     .field
+      .alert.alert-info.hide.pull-right
+        Your email address
       = f.label :email
       = f.text_field :email
 
   %div.control-group
     .field
+      .alert.alert-info.hide.pull-right
+        What skills are you looking for?
       = f.label :skill_list
-      = f.text_field :skill_list, {data-provide: "typeahead", data-source: "Start ups, Charity/Social Enterprise, Other"}
+      = f.text_field :skill_list
 
   %div.control-group
     .field
-      = f.label :domain_list
-      = f.text_field :domain_list
+      .alert.alert-info.hide.pull-right
+        Broadly speaking what Sector does your idea fit into?
+      = f.label Sector
+      = f.text_field :domain_list, {data-provide: "typeahead", data-source: '["Activism","Advertising","Alternative Economy","API","Automotive","Business Productivity","Communication","Conferencing","Consumer Interest","Crowdfunding","Custom Manufacturing","Customer Service","Data Analysis","Dating &amp; Relationships","Developer Productivity","Discovery","E-commerce","Education","Energy","Entrepreneurs &amp; Business","Facebook Apps","Financial","Food &amp; Agriculture","Games","Government","Greater Good","Green Technology","Health &amp; Wellness","Healthcare","Home Automation","Lead Generation","Lifestyle","Local Search","Marketing","Media","Mobile","Music","Non-Profit","Notifications &amp; Alerts","Open Source","Personal Productivity","Realtime Search","Research","Restaurants","Retail","Sales &amp; CRM","Service","Social","Transportation">
+"Unified Communications","Other"]'}
 
   %div.control-group
     .actions
@@ -91,4 +98,6 @@
         }).blur(function() {
           $(this).parent().find(".alert").hide();
         });
+        
+        $("#pitch_skill_list").tagit();
   });
