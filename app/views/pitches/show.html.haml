@@ -12,10 +12,9 @@
     = @pitch.location
 
 #video.span8
-  Video url:
-  = @pitch.video_url
+  %iframe{:width => "100%", :height => "400px", :src => @pitch.video_url, :title => "YouTube video player", :allowscriptaccess => "always", :allowFullScreen => "true", :frameborder => "0"}
 
-#side-bar.span4.offset8
+#side-bar.span3
   #information
     %button.btn.btn-primary{:name => "build"}
       Build it!
