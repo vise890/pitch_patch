@@ -81,6 +81,8 @@
 
       });
         $("#input").focus(function() {
-          $(this).parent().find(".alert").('slow');
+          $(this).parent().find(".alert").fadeIn('slow');
+        }).blur(function() {
+          $(this).parent().find(".alert").hide();
         });
   });
