@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @pitch.title
+%p
+  %b Description:
+  = @pitch.description
+%p
+  %b Video url:
+  = @pitch.video_url
+%p
+  %b Location:
+  = @pitch.location
+%p
+  %b User:
+  = @pitch.user_id
+
+= link_to 'Edit', edit_pitch_path(@pitch)
+\|
+= link_to 'Back', pitches_path

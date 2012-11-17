@@ -1,0 +1,27 @@
+%h1 Listing pitches
+
+%table
+  %tr
+    %th Title
+    %th Description
+    %th Video url
+    %th Location
+    %th User
+    %th
+    %th
+    %th
+
+  - @pitches.each do |pitch|
+    %tr
+      %td= pitch.title
+      %td= pitch.description
+      %td= pitch.video_url
+      %td= pitch.location
+      %td= pitch.user_id
+      %td= link_to 'Show', pitch
+      %td= link_to 'Edit', edit_pitch_path(pitch)
+      %td= link_to 'Destroy', pitch, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Pitch', new_pitch_path
