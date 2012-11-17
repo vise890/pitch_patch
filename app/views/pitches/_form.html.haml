@@ -58,7 +58,7 @@
   %div.control-group
     .field
       = f.label :skill_list
-      = f.text_field :skill_list
+      = f.text_field :skill_list, {data-provide: "typeahead", data-source: "Start ups, Charity/Social Enterprise, Other"}
 
   %div.control-group
     .field
