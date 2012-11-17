@@ -22,7 +22,6 @@ group :assets do
   gem 'haml-rails', "~> 0.3.5"
 
   gem 'uglifier', '>= 1.0.3'
-  gem "lazy_high_charts", "~> 1.2.2"
 end
 
 gem 'jquery-rails'
