@@ -15,9 +15,11 @@
 
 #side-bar.span3
   #actions
-    %button.btn.btn-primary.btn-large{:name => "build"}
+    %button.btn.btn-primary.btn-large#get-involved-btn
       Get Involved!
-    .hide= render partial: 'participation_requests/form'
+    .hide.alert.alert-success#get-involved-success Nice, we'll let you know how you can help!
+    .hide.alert.alert-error#get-involved-failure Something went wrong, check that the email is valid
+    .hide#get-involved-container= render partial: 'participation_requests/form'
 
 
   #tags
@@ -27,3 +29,6 @@
 
 %section.span8#description
   = raw @pitch.description
+
+:javascript
+  var pitch_participation_requests_path = "#{pitch_participation_requests_path @pitch}";
