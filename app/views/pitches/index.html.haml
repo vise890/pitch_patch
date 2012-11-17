@@ -6,7 +6,7 @@
 
 %ul.span10
   - @pitches.each do |pitch|
-    %div.pitch.row-fluid.well
+    %div.pitch.row-fluid.box
 
       %span.index-video.span2
         %iframe{:width => "130", :height => "130", :src => pitch.video_url, :title => "YouTube video player", :allowscriptaccess => "always", :allowFullScreen => "true", :frameborder => "0"}
