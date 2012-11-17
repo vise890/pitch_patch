@@ -44,15 +44,22 @@ body {
 
 /* Index page styling*/
 .box .index-body {
-    padding: 19px;
+  padding: 19px;
 }
 
 .box .index-details {
-    padding: 19px;
+  padding: 19px;
 }
 
 /* Show page styling */
 
 #side-bar {
-      background-color: whiteSmoke;
+  margin-left: 0px;
+  min-height: 300px;
+  border: 1px solid #e3e3e3;
+  background-color: whiteSmoke;
+}
+
+#actions button, #tags {
+  margin: 20px;
 }
