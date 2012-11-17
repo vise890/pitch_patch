@@ -3,7 +3,13 @@ source 'http://rubygems.org'
 gem 'rails', '3.2.8'
 gem 'bootstrap-sass', '2.1'
 
-gem 'pg'
+group :development do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+end
 
 gem 'acts-as-taggable-on', '~> 2.3.1'
 
