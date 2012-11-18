@@ -6,10 +6,6 @@ URGENT
 ------
 
 - Fix page titles.
-- Fix navbar to stay at top of page
-- Fix index alignment, for long tags, tag-well
-
-- Video z-index
 - Error alert on pages
 
 
