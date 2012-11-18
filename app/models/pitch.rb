@@ -1,5 +1,5 @@
 class Pitch < ActiveRecord::Base
-  attr_accessible :description, :location, :title, :video_url, :skill_list, :domain_list, :private
+  attr_accessible :description, :location, :title, :video_url, :skill_list, :domain_list, :private_pitch
   acts_as_taggable
   acts_as_taggable_on :skills, :domains
 
@@ -10,5 +10,5 @@ class Pitch < ActiveRecord::Base
   validates :description, presence: true
   validates :video_url, format: { with: /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/, message: 'should be a valid youtube video' }
 
-  scope :public, where(private: false)
+  scope :public, where(private_pitch: false)
 end
