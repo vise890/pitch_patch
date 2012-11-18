@@ -5,7 +5,7 @@ class PitchesController < ApplicationController
   # GET /pitches
   # GET /pitches.json
   def index
-    @pitches = Pitch.all
+    @pitches = Pitch.public.all
 
     respond_to do |format|
       format.html # index.html.erb
