@@ -3,11 +3,19 @@
 <head>
   <title>PitchPatch</title>
 
+  <!-- Facebook OpenGraph datapoints -->
+  <meta property="og:title" content="PitchPatch" />
+  <!-- <meta property="og:description" content="Should be less than ~155 characters, ideally." /> -->
+  <!-- <meta property="og:image" content="http://example.com/image.png" /> -->
+
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    "application",        :media => "all" %>
 
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
+
 </head>
 
 <body>
@@ -25,6 +33,7 @@
     <a class="brand" href="/">PitchPatch</a>
     <ul class="nav">
       <li><span class="btn btn-slim"><%= link_to 'Pitch in!', new_pitch_path, { id: 'pitch-in-btn' }%></span></li>
+      <li><a href="/about.html">Questions?</a></li>
     </ul>
     <ul class="nav nav-pills pull-right">
       <% if user_signed_in? %>
