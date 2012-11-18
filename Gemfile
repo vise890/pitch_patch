@@ -23,3 +23,4 @@ end
 
 gem 'haml-rails', "~> 0.3.5"
 gem 'jquery-rails'
+gem 'devise'

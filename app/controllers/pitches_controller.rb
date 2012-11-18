@@ -1,4 +1,7 @@
 class PitchesController < ApplicationController
+
+  before_filter :authenticate_user!, except: [:index, :show]
+
   # GET /pitches
   # GET /pitches.json
   def index
@@ -25,7 +28,7 @@ class PitchesController < ApplicationController
   # GET /pitches/new
   # GET /pitches/new.json
   def new
-    @pitch = Pitch.new
+    @pitch = current_user.pitches.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,13 +38,13 @@ class PitchesController < ApplicationController
 
   # GET /pitches/1/edit
   def edit
-    @pitch = Pitch.find(params[:id])
+    @pitch = current_user.pitches.find(params[:id])
   end
 
   # POST /pitches
   # POST /pitches.json
   def create
-    @pitch = Pitch.new(params[:pitch])
+    @pitch = current_user.pitches.build(params[:pitch])
 
     respond_to do |format|
       if @pitch.save
@@ -57,7 +60,7 @@ class PitchesController < ApplicationController
   # PUT /pitches/1
   # PUT /pitches/1.json
   def update
-    @pitch = Pitch.find(params[:id])
+    @pitch = current_user.pitches.find(params[:id])
 
     respond_to do |format|
       if @pitch.update_attributes(params[:pitch])
@@ -73,7 +76,7 @@ class PitchesController < ApplicationController
   # DELETE /pitches/1
   # DELETE /pitches/1.json
   def destroy
-    @pitch = Pitch.find(params[:id])
+    @pitch = current_user.pitches.find(params[:id])
     @pitch.destroy
 
     respond_to do |format|

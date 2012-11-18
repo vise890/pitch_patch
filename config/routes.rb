@@ -1,6 +1,8 @@
 Inception::Application.routes.draw do
 
-  resources :pitches, except: [:edit, :update, :destroy] do
+  devise_for :users
+
+  resources :pitches do
     resources :participation_requests, only: :create
   end
 
