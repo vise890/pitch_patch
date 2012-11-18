@@ -1,5 +1,17 @@
 module PitchesHelper
   def youtube_embed_url(video_url)
-    video_url.gsub('youtu.be', 'www.youtube.com/embed')
+    return '' if video_url.blank?
+
+    regexp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/
+    if video_url.match(regexp)
+      youtube_code = video_url.match(regexp)[7]
+    else
+      youtube_code = nil
+    end
+    if youtube_code && youtube_code.length == 11
+      "http://www.youtube.com/embed/#{youtube_code}"
+    else
+      ''
+    end
   end
 end
