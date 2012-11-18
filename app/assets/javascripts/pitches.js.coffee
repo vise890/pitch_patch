@@ -2,6 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 $ ->
+
   $('#get-involved-btn').click ->
     $('#get-involved-container').show()
     $('#get-involved-failure').hide()
@@ -22,6 +23,11 @@ $ ->
       error: ->
         $('#get-involved-failure').show()
         $('#get-involved-success').hide()
+
+  $('#pitch-in-home-btn').click ->
+    pitch_in_url = $('#pitch-in-btn').attr('href')
+    window.location = pitch_in_url
+
 
 
 
