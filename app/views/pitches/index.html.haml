@@ -1,21 +1,40 @@
 
-.row.hero-unit
+%a.pull-right{:href => "/#pitch-in"} See featured pitches
+
+.row.hero-unit#call-to-action
   %h1
     Your ideas are enormous.
-
-  .pull-right
-    %iframe{:width=>"420", :height=>"315", :src=>"http://www.youtube.com/embed/T2zERHvSr-Y?wmode=opaque", :frameborder=>"0", :style => "border: 1px solid #000"}
 
   %h2
     Don't carry them alone.
   %p
     Find other people who are just as excited about them as you.
-  %a.btn.btn-success.btn-large.offset2#pitch-in-home-btn
-    Pitch in!
+
+  .offset4
+    %a.btn.btn-success.btn-large#pitch-in-home-btn
+      Pitch-on!
+    %p.small make a pitch and get people involved.
+
+
+.well#further-information
+
+  #homepage-video.span6
+    %iframe{:width=>"420px", :height=>"315px", :src=>"http://www.youtube.com/embed/T2zERHvSr-Y?wmode=opaque", :frameborder=>"0", :style => "border: 1px solid #000"}
+  .span5.muted
+    %p
+      The world is not a perfect place.
+    %p
+      Do you have ideas about how to improve it?
+    %p
+      We have the online platform for you! Pitch your idea in under 60 seconds, and connect with the people you need.
 
 
 .clearfix
 
+%h1#pitch-in.page-header
+  Pitch in!
+  %small
+    get involved in a project
 %ul#pitches
   - @pitches.each do |pitch|
     %div.pitch.row-fluid.box
@@ -32,6 +51,7 @@
 
       %span.index-details.span3.pull-right
         .tags.well.well-small
+          %p Project needs:
           - pitch.skill_list.each do |skill|
             %span.label.label-info.tag= skill
         %p.edit

@@ -34,6 +34,9 @@
 }
 
 
+.hero-unit {
+  margin-right: -20px;
+}
 
 
 
@@ -61,21 +64,38 @@ body {
 
 
 /* Index page styling*/
-.box .index-body {
-  padding: 19px;
+
+#call-to-action {
+  .btn {
+    margin-top: 12px;
+  }
+
 }
 
-.box .index-details {
-  padding: 19px;
+#further-information {
+  height: 320px;
+  #homepage-video {
+    margin: auto;
+  }
 }
 
-.hero-unit .btn {
-  margin-top: 12px;
+#pitch-in {
+  padding-top: 2em;
+  margin-bottom: 1em;
 }
+
+
 
 #pitches {
-  margin-left: 25px;
-  margin-right: 30px;
+
+  .box .index-body {
+    padding: 19px;
+  }
+
+  .box .index-details {
+    padding: 19px;
+  }
+
   .tags {
     margin: 12px;
   }
