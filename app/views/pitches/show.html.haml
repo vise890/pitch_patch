@@ -23,8 +23,15 @@
     .hide.alert.alert-error#get-involved-failure Something went wrong, check that the email is valid
     .hide#get-involved-container= render partial: 'participation_requests/form'
 
-    #twitter
-      %a.twitter-share-button{:href => "://twitter.com/share", :data => {:url => "http://www.pitchpatch.co", :via => "pitchpatchco", :lang => "en"}}
+    .social
+      .addthis_toolbox.addthis_default_style
+        / %a.addthis_button_preferred_1
+        %a.addthis_button_preferred_2
+        %a.addthis_button_preferred_3
+        %a.addthis_button_preferred_4
+        %a.addthis_button_compact
+        %a.addthis_counter.addthis_bubble_style
+
 
 
   #tags.well.well-small
@@ -39,8 +46,6 @@
 :javascript
   var pitch_participation_requests_path = "#{pitch_participation_requests_path @pitch}";
 
-:javascript
-  $(document).ready( function() {
-    // $(".twitter-share-button").data('url', document.location.href)
-    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-  })
+/ AddThis social widget javascript
+%script{:type => "text/javascript",
+        :src  => "http://s7.addthis.com/js/300/addthis_widget.js#pubid=xa-50a8af9b09fdf947"}
