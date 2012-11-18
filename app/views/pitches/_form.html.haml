@@ -1,3 +1,7 @@
+
+.well.well-small
+  A pitch is a 90 second video and short text description of an idea that you are looking for help to turn into reality.
+
 = form_for @pitch, :html => {:class => "form-horizontal"} do |f|
   - if @pitch.errors.any?
     #error_explanation
@@ -5,98 +9,127 @@
       %ul
         - @pitch.errors.full_messages.each do |msg|
           %li= msg
+          
+  %ul.nav.nav-tabs{:id=>"newPitchTabs"}
+    %li.active
+      %a{:href=>"#videoTab", :data => {:toggle => "tab"}}
+        Your Pitch Video 
+    %li
+      %a{:href=>"#descTab", :id => "descTabLink", :data => {:toggle => "tab"}}
+        Describe Your Pitch
+    %li
+      %a{:href=>"#extrasTab", :data => {:toggle => "tab"}}
+        Final Information  
+  
+  .clearfix
 
-  %div.control-group
-    .field
-      .alert.alert-info.hide.pull-right
-        Should be simple, short and memorable.
-        %br
-        Imagine explaining your pitch in a Tweet.
-      = f.label :title
-      = f.text_field :title
+  .tab-content
+
+    .tab-pane.active{:id=>"videoTab"}
+      %div.control-group
+        .field
+          .alert.alert-info.hide.pull-right{:id => "videoHelpText"}
+            You Tube URL for your Pitch
+          = f.label :video_url
+          = f.text_field :video_url, :data => {:helpid => "videoHelpText"}
+        
+    .tab-pane{:id=>"descTab"}
+      %div.control-group
+        .field
+          .alert.alert-info.hide.pull-right{:id => "titleHelpText"}
+            Should be simple, short and memorable.
+            %br
+            Imagine explaining your pitch in a Tweet.
+          = f.label :title
+          = f.text_field :title, :data => {:helpid => "titleHelpText"}
 
 
-  %div.control-group
-    .field
-      .alert.alert-info.hide.pull-right
-        Expand on your pitch. <br />Stay focused and be clear on what your <br />project hopes to accomplish.
-        %br
-        We recommend answering the following questions:
-        %ul
-          %li
-            Who am I?
-          %li
-            What is the problem?
-          %li
-            What is my solution?
-          %li
-            What help do I need?
-      = f.label :description
-      = f.text_area :description
+      %div.control-group
+        .field
+          .alert.alert-info.hide.pull-right{:id => "descHelpText"}
+            Expand on your pitch. <br />Stay focused and be clear on what your <br />project hopes to accomplish.
+            %br
+            We recommend answering the following questions:
+            %ul
+              %li
+                Who am I?
+              %li
+                What is the problem?
+              %li
+                What is my solution?
+              %li
+                What help do I need?
+          = f.label :description
+          = f.text_area :description
 
-  %div.control-group
-    .field
-      .alert.alert-info.hide.pull-right
-        You Tube URL for your Pitch
-      = f.label :video_url
-      = f.text_field :video_url
 
-  %div.control-group
-    .field
-      .alert.alert-info.hide.pull-right
-        Are you looking to connect with
-        %br
-        people in a specific location?
-      = f.label :location
-      = f.text_field :location
+    .tab-pane{:id=>"extrasTab"}
+      %div.control-group
+        .field
+          .alert.alert-info.hide.pull-right{:id => "locationHelpText"}
+            Are you looking to connect with
+            %br
+            people in a specific location?
+          = f.label :location
+          = f.text_field :location, :data => {:helpid => "locationHelpText"}
 
-  %div.control-group
-    .field
-      .alert.alert-info.hide.pull-right
-        Your email address
-      = f.label :email
-      = f.text_field :email
+      %div.control-group
+        .field
+          .alert.alert-info.hide.pull-right{:id => "emailHelpText"}
+            Your email address
+          = f.label :email
+          = f.text_field :email
 
-  %div.control-group
-    .field
-      .alert.alert-info.hide.pull-right
-        What skills are you looking for?
-      = f.label :skill_list
-      = f.text_field :skill_list
+      %div.control-group
+        .field
+          .alert.alert-info.hide.pull-right{:id => "skillsListHelpText"}
+            What skills are you looking for?
+          = f.label :skill_list
+          = f.text_field :skill_list, :data => {:helpid => "skillsListHelpText"}
 
-  %div.control-group
-    .field
-      .alert.alert-info.hide.pull-right
-        Broadly speaking what Sector does your idea fit into?
-      = f.label :domain_list
-      = f.text_field :domain_list, :data => {:provide => "typeahead", :source => '["Activism","Advertising","Alternative Economy","API","Automotive","Business Productivity","Communication","Conferencing","Consumer Interest","Crowdfunding","Custom Manufacturing","Customer Service","Data Analysis","Dating &amp; Relationships","Developer Productivity","Discovery","E-commerce","Education","Energy","Entrepreneurs &amp; Business","Facebook Apps","Financial","Food &amp; Agriculture","Games","Government","Greater Good","Green Technology","Health &amp; Wellness","Healthcare","Home Automation","Lead Generation","Lifestyle","Local Search","Marketing","Media","Mobile","Music","Non-Profit","Notifications &amp; Alerts","Open Source","Personal Productivity","Realtime Search","Research","Restaurants","Retail","Sales &amp; CRM","Service","Social","Transportation","Unified Communications","Other"]'}
+      %div.control-group
+        .field
+          .alert.alert-info.hide.pull-right{:id => "domainListHelpText"}
+            Broadly what Sector does your idea fit into?
+          = f.label :domain_list
+          = f.text_field :domain_list, :data => {:helpid => "skillsListHelpText", :provide => "typeahead", :source => '["Activism","Advertising","Alternative Economy","API","Automotive","Business Productivity","Communication","Conferencing","Consumer Interest","Crowdfunding","Custom Manufacturing","Customer Service","Data Analysis","Dating &amp; Relationships","Developer Productivity","Discovery","E-commerce","Education","Energy","Entrepreneurs &amp; Business","Facebook Apps","Financial","Food &amp; Agriculture","Games","Government","Greater Good","Green Technology","Health &amp; Wellness","Healthcare","Home Automation","Lead Generation","Lifestyle","Local Search","Marketing","Media","Mobile","Music","Non-Profit","Notifications &amp; Alerts","Open Source","Personal Productivity","Realtime Search","Research","Restaurants","Retail","Sales &amp; CRM","Service","Social","Transportation","Unified Communications","Other"]'}
 
-  %div.control-group
-    .actions
-      = f.submit 'Save', {class: "btn btn-primary slim-button"}
+      %div.control-group
+        .actions
+          = f.submit 'Save', {class: "btn btn-primary slim-button"}
 
 
 :javascript
   $(function() {
-      $("#pitch_description").htmlarea({
-          // Override/Specify the Toolbar buttons to show
-          toolbar: [
-              ["bold", "italic", "underline", "|", "p"],
-              ["link", "unlink", "|", "image"]
-          ],
-
+      $('a#descTabLink').click(function (e) {
+        e.preventDefault();
+        $(this).tab('show');
+        
+        $("#pitch_description").htmlarea({
+            // Override/Specify the Toolbar buttons to show
+            toolbar: [
+                ["bold", "italic", "underline", "|", "p"],
+                ["link", "unlink", "|", "image"]
+            ],
+            loaded: function() {
+              $(this.editor).click(function() {
+                $("#descHelpText").fadeIn('slow');
+              }).blur(function() {
+                $("#descHelpText").hide();
+              });
+            }
+        });
+        
+      })
+      
+      $("#pitch_skill_list").tagsInput();
+      
+      $("input").focus(function() {
+        $("#" + $(this).data("helpid")).fadeIn('slow');
+        $("#descHelpText").hide();
+      }).blur(function() {
+        $(this).parent().find(".alert").hide();
       });
-        $("input").focus(function() {
-          $(this).parent().find(".alert").fadeIn('slow');
-        }).blur(function() {
-          $(this).parent().find(".alert").hide();
-        });
 
-        $("textarea").focus(function() {
-          $(this).parent().find(".alert").fadeIn('slow');
-        }).blur(function() {
-          $(this).parent().find(".alert").hide();
-        });
 
-        // $("#pitch_skill_list").tagsInput();
   });
