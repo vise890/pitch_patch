@@ -13,8 +13,12 @@
 
   #actions
 
-    %button.btn.btn-primary.btn-large#get-involved-btn
-      Get Involved!
+    - if current_user && current_user.pitches.include?(@pitch)
+      %button.btn.btn-large= link_to 'Edit', edit_pitch_path(@pitch)
+      %button.btn.btn-large.btn-danger= link_to 'Delete', @pitch, method: :delete
+    - else
+      %button.btn.btn-primary.btn-large#get-involved-btn
+        Get Involved!
 
     .hide.alert.alert-success#get-involved-success Nice, we'll let you know how you can help!
 
