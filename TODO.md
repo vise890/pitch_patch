@@ -5,11 +5,9 @@ TODO
 URGENT
 ------
 
-- Fix tweet URLs.
-- Add facebook
+- Fix page titles.
 - Fix navbar to stay at top of page
 - Fix index alignment, for long tags, tag-well
-- Remove Pitch in link from navbar on homepage.
 
 - Video z-index
 - Error alert on pages
