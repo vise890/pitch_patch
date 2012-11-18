@@ -9,19 +9,19 @@
 
 
 
-%ul#pitches.span10
+%ul#pitches
   - @pitches.each do |pitch|
     %div.pitch.row-fluid.box
 
-      %span.index-video.span3
-        = link_to image_tag("http://img.youtube.com/vi/#{youtube_embed_code pitch.video_url}/default.jpg", :border => 0), pitch, {:width => "100%", :height => "150px"}
+      %span.index-thumbnail.span3
+        = link_to image_tag("http://img.youtube.com/vi/#{youtube_embed_code pitch.video_url}/0.jpg"), pitch
 
       %span.index-body.span6
         %h2
           = link_to pitch.title, pitch
 
 
-      %span.index-details.span2.pull-right
+      %span.index-details.span3.pull-right
         .tags
           - pitch.skill_list.each do |skill|
             %span.label.label-info.tag= skill
