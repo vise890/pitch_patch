@@ -8,6 +8,7 @@ class Pitch < ActiveRecord::Base
   validates :title, presence: true
   validates :description, presence: true
   validates :video_url, presence: true
-  validates :email, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }
+  validates :video_url, format: { with: /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/, message: 'should be a valid youtube video' }
+  validates :email, format: { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }
 
 end
