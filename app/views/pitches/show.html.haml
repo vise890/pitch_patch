@@ -24,8 +24,8 @@
     .hide#get-involved-container= render partial: 'participation_requests/form'
 
     .social
-      .addthis_toolbox.addthis_default_style
-        / %a.addthis_button_preferred_1
+      .addthis_toolbox.addthis_default_style{:tw => {:via => "pitchpatchco"}}
+        %a.addthis_button_preferred_1
         %a.addthis_button_preferred_2
         %a.addthis_button_preferred_3
         %a.addthis_button_preferred_4
@@ -49,3 +49,10 @@
 / AddThis social widget javascript
 %script{:type => "text/javascript",
         :src  => "http://s7.addthis.com/js/300/addthis_widget.js#pubid=xa-50a8af9b09fdf947"}
+
+:javascript
+  var addthis_share = {
+        templates:
+          {twitter: '{{title}}: {{url}}'}
+    }
+

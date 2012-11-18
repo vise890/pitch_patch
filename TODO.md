@@ -11,6 +11,7 @@ URGENT
 - Fix index alignment, for long tags, tag-well
 - Remove Pitch in link from navbar on homepage.
 
+- Video z-index
 - Error alert on pages
 
 
