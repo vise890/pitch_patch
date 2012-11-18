@@ -9,7 +9,7 @@
       %ul
         - @pitch.errors.full_messages.each do |msg|
           %li= msg
-          
+
   %ul.nav.nav-tabs{:id=>"newPitchTabs"}
     %li.active
       %a{:href=>"#videoTab", :data => {:toggle => "tab"}}
@@ -18,9 +18,9 @@
       %a{:href=>"#descTab", :id => "descTabLink", :data => {:toggle => "tab"}}
         Describe Your Pitch
     %li
-      %a{:href=>"#extrasTab", :data => {:toggle => "tab"}}
+      %a{:href=>"#extrasTab", :id => "extrasTabLink", :data => {:toggle => "tab"}}
         Final Information  
-  
+
   .clearfix
 
   .tab-content
@@ -32,6 +32,9 @@
             You Tube URL for your Pitch
           = f.label :video_url
           = f.text_field :video_url, :data => {:helpid => "videoHelpText"}
+          
+      %a.btn.pull-right{:href => "javascript: $('#newPitchTabs a#descTabLink').tab('show');"}
+        Next
         
     .tab-pane{:id=>"descTab"}
       %div.control-group
@@ -62,6 +65,8 @@
           = f.label :description
           = f.text_area :description
 
+      %a.btn.pull-right{:href => "javascript: $('#newPitchTabs a#extrasTabLink').tab('show');"}
+        Next
 
     .tab-pane{:id=>"extrasTab"}
       %div.control-group
@@ -97,7 +102,7 @@
           = f.check_box :private, :data => {:helpid => "privateHelpText"}
 
       %div.control-group
-        .actions
+        .actions.pull-right
           = f.submit 'Save', {class: "btn btn-primary slim-button"}
 
 
