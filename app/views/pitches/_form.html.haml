@@ -78,12 +78,14 @@
           .alert.alert-info.hide.pull-right{:id => "emailHelpText"}
             Your email address
           = f.label :email
-          = f.text_field :email
+          = f.text_field :email, :data => {:helpid => "emailHelpText"}
 
       %div.control-group
         .field
           .alert.alert-info.hide.pull-right{:id => "skillsListHelpText"}
-            What skills are you looking for?
+            What skills are you looking for? 
+            %br
+            (Separate multiple skills with commas).
           = f.label :skill_list
           = f.text_field :skill_list, :data => {:helpid => "skillsListHelpText"}
 
@@ -92,7 +94,7 @@
           .alert.alert-info.hide.pull-right{:id => "domainListHelpText"}
             Broadly what Sector does your idea fit into?
           = f.label :domain_list
-          = f.text_field :domain_list, :data => {:helpid => "skillsListHelpText", :provide => "typeahead", :source => '["Activism","Advertising","Alternative Economy","API","Automotive","Business Productivity","Communication","Conferencing","Consumer Interest","Crowdfunding","Custom Manufacturing","Customer Service","Data Analysis","Dating &amp; Relationships","Developer Productivity","Discovery","E-commerce","Education","Energy","Entrepreneurs &amp; Business","Facebook Apps","Financial","Food &amp; Agriculture","Games","Government","Greater Good","Green Technology","Health &amp; Wellness","Healthcare","Home Automation","Lead Generation","Lifestyle","Local Search","Marketing","Media","Mobile","Music","Non-Profit","Notifications &amp; Alerts","Open Source","Personal Productivity","Realtime Search","Research","Restaurants","Retail","Sales &amp; CRM","Service","Social","Transportation","Unified Communications","Other"]'}
+          = f.text_field :domain_list, :data => {:helpid => "domainListHelpText", :provide => "typeahead", :source => '["Activism","Advertising","Alternative Economy","API","Automotive","Business Productivity","Communication","Conferencing","Consumer Interest","Crowdfunding","Custom Manufacturing","Customer Service","Data Analysis","Dating &amp; Relationships","Developer Productivity","Discovery","E-commerce","Education","Energy","Entrepreneurs &amp; Business","Facebook Apps","Financial","Food &amp; Agriculture","Games","Government","Greater Good","Green Technology","Health &amp; Wellness","Healthcare","Home Automation","Lead Generation","Lifestyle","Local Search","Marketing","Media","Mobile","Music","Non-Profit","Notifications &amp; Alerts","Open Source","Personal Productivity","Realtime Search","Research","Restaurants","Retail","Sales &amp; CRM","Service","Social","Transportation","Unified Communications","Other"]'}
 
       %div.control-group
         .actions
@@ -126,9 +128,11 @@
       
       $("input").focus(function() {
         $("#" + $(this).data("helpid")).fadeIn('slow');
+        $("#" + $("#" + this.id.replace("_tag","")).data("helpid")).fadeIn('slow');
         $("#descHelpText").hide();
+        $("#skillsListHelpText").hide();
       }).blur(function() {
-        $(this).parent().find(".alert").hide();
+        $("#" + $(this).data("helpid")).hide();
       });
 
 
