@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PitchPatch</title>
+  <title>Pitch Patch: </title>
 
   <!-- Facebook OpenGraph datapoints -->
   <meta property="og:title" content="PitchPatch" />
@@ -29,7 +29,7 @@
 <!-- Navbar -->
 <div class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner">
-    <a class="brand" href="/">PitchPatch</a>
+    <a class="brand" href="/"><%=image_tag("pitchpatchlogo_sm.png", :size => "150x84", :alt => "Pitch Patch") %></a>
     <ul class="nav">
       <li><span class="btn btn-slim"><%= link_to 'Pitch-on!', new_pitch_path, { id: 'pitch-in-btn' }%></span></li>
       <li><a href="/#pitch-in">Pitch in</a></li>
