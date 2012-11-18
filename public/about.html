@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PitchPatch</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/assets/application.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/bootstrap.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/jHtmlArea.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/jquery.tagsinput.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/participation_requests.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/pitches.css?body=1" media="all" rel="stylesheet" type="text/css" />
+
+  <script src="/assets/jquery.js?body=1" type="text/javascript"></script>
+<script src="/assets/jquery_ujs.js?body=1" type="text/javascript"></script>
+<script src="/assets/bootstrap.min.js?body=1" type="text/javascript"></script>
+<script src="/assets/google_analytics.js?body=1" type="text/javascript"></script>
+<script src="/assets/jHtmlArea-0.7.5.min.js?body=1" type="text/javascript"></script>
+<script src="/assets/jquery.tagsinput.min.js?body=1" type="text/javascript"></script>
+<script src="/assets/participation_requests.js?body=1" type="text/javascript"></script>
+<script src="/assets/pitches.js?body=1" type="text/javascript"></script>
+<script src="/assets/bootstrap.js?body=1" type="text/javascript"></script>
+<script src="/assets/application.js?body=1" type="text/javascript"></script>
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="Ixsmj7eCAJRicfEUFCbyK9olGYG7cOYbUfVID6cOUrQ=" name="csrf-token" />
+</head>
+
+<body>
+<div class="container">
+
+
+<!-- Navbar -->
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <a class="brand" href="/">PitchPatch</a>
+    <ul class="nav">
+      <li><a href="/" id="pitch-in-btn">< Back</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="well">
+  <h3>Your Questions Answered!</h3>
+</div>
+
+
+<div class="accordion" id="accordion1">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">
+        What is a Pitch?
+      </a>
+    </div>
+    <div id="collapseOne" class="accordion-body collapse in">
+      <div class="accordion-inner">
+        A pitch is a 90 second video and short text description of an idea that you are looking for help to turn into reality.
+      </div>
+    </div>
+    
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo">
+        Why would I want to do a Pitch?
+      </a>
+    </div>
+    <div id="collapseTwo" class="accordion-body collapse">
+      <div class="accordion-inner">
+        <ul>
+          <li>To find other people who are just as excited about your ideas as you are.  </li>
+          <li>To receive valuable feedback on your idea.</li>
+          <li>To quickly and easily validate your idea</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseThree">
+        Great, so how do I add my Pitch to PitchPatch?
+      </a>
+    </div>
+    <div id="collapseThree" class="accordion-body collapse">
+      <div class="accordion-inner">
+  <a class='btn btn-success' id='pitch-in-home-btn' href="/pitches/new">
+    Add your pitch here!
+  </a>. Its easy.
+      </div>
+    </div>
+    
+    
+  </div>
+</div>
+
+
+
+</div> <!-- container div -->
+
+<!-- Footer -->
+<footer class="footer">
+<div class="container">
+    <div class="span3">
+        <p><a href="https://github.com/jeffbr13/inception">PitchPatch</a> development version.</p>
+        <p>Copyright © 2012.</p>
+    </div>
+    <div class="span3 pull-right">
+        <p>Keep up to date on <a href="https://www.facebook.com/pages/PitchPatch/474280455928477">Facebook</a>.</p>
+        <p>Follow us on <a href="https://twitter.com/pitchpatchco">Twitter</a>! <small>(Don't be creepy.)</small></p>
+    </div>
+</div>
+</footer>
+
+</body>
+</html>
