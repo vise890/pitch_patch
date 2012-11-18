@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121118114848) do
+ActiveRecord::Schema.define(:version => 20121118115553) do
 
   create_table "participation_requests", :force => true do |t|
     t.string   "email"
@@ -27,8 +27,9 @@ ActiveRecord::Schema.define(:version => 20121118114848) do
     t.string   "video_url"
     t.string   "location"
     t.integer  "user_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.boolean  "private",     :default => false
   end
 
   create_table "taggings", :force => true do |t|
