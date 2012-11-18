@@ -13,8 +13,11 @@
 <body>
 <div class="container">
 
-<p class="notice alert alert-success"><%= notice %></p>
-<p class="alert alert-error"><%= alert %></p>
+<% if notice %>
+  <p class="notice alert alert-success"><%= notice %></p>
+<% elsif alert %>
+    <p class="alert alert-error"><%= alert %></p>
+<% end %>
 
 <!-- Navbar -->
 <div class="navbar navbar-inverse navbar-fixed-top">
@@ -22,6 +25,14 @@
     <a class="brand" href="/">PitchPatch</a>
     <ul class="nav">
       <li><span class="btn btn-slim"><%= link_to 'Pitch in!', new_pitch_path, { id: 'pitch-in-btn' }%></span></li>
+    </ul>
+    <ul class="nav nav-pills pull-right">
+      <% if user_signed_in? %>
+        <li><%=  link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to 'Sign up', new_user_registration_path %></li>
+        <li><%= link_to 'Sign in', new_user_session_path %><li>
+      <% end %>
     </ul>
   </div>
 </div>
