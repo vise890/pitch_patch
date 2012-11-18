@@ -25,6 +25,8 @@
   <p class="notice alert alert-success"><%= notice %></p>
 <% elsif alert %>
     <p class="alert alert-error"><%= alert %></p>
+<% elsif !devise_error_messages!.blank?  %>
+    <div class="alert alert-error"><%= devise_error_messages! %></div>
 <% end %>
 
 <!-- Navbar -->
