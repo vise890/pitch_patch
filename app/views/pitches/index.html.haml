@@ -13,8 +13,8 @@
   - @pitches.each do |pitch|
     %div.pitch.row-fluid.box
 
-      %span.index-video.span3
-        %iframe{:width => "214px", :height => "180px", :src => "#{youtube_embed_url pitch.video_url}", :title => "YouTube video player", :allowscriptaccess => "always", :allowFullScreen => "true", :frameborder => "0"}
+      %span.index-thumbnail.span3
+        = link_to image_tag("http://img.youtube.com/vi/#{youtube_embed_code pitch.video_url}/0.jpg"), pitch
 
       %span.index-body.span6
         %h2

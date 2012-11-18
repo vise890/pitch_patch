@@ -18,4 +18,7 @@ URGENT
     - size of message textarea
 
 
+- Homepage
+
+
 - Alternate colours of tag: same categories as StartupWeeked stickers!
