@@ -64,6 +64,9 @@ class PitchesController < ApplicationController
 
     respond_to do |format|
       if @pitch.update_attributes(params[:pitch])
+        @pitch.participation_requests.each do |pr|
+          PitchMailer.update(@pitch, pr.email).deliver
+        end
         format.html { redirect_to @pitch, notice: 'Pitch was successfully updated.' }
         format.json { head :no_content }
       else
