@@ -5,7 +5,7 @@ TODO
 IMMEDIATE
 -------------
 
-- Add page titles to HTML <title> tag.
+- Add pitch page titles to HTML <title> tag.
 - Style error alerts to use Bootstrap alerts on pages
 - USERS!
 
