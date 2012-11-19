@@ -15,12 +15,15 @@ IMMEDIATE
 TOP PRIORITY (NEED THIS)
 -------------------------
 
+- Pagination and Pitch index, separate from homepage.
 - OAuth login
+- Search
+- Automatic tag
 
 
 
 
-LONG TERM
+MEDIUM TERM
 ----------
 
 - Categories of pitch:
@@ -29,6 +32,8 @@ LONG TERM
     - startup idea
     - software project
 - Matching tags with users
+
+
 
 
 
