@@ -2,29 +2,26 @@ TODO
 ====
 
 
-IMMEDIATE
--------------
+TOP PRIORITY (integral to product)
+---------------------------------
 
-- Add pitch page titles to HTML <title> tag.
-- Style error alerts to use Bootstrap alerts on pages
 - USERS!
+- Pagination and a Pitch index separate from the homepage.
+- Search via tags
 
 
 
+Lower priority (integral to product)
+-------------------------------------
 
-TOP PRIORITY (NEED THIS)
--------------------------
-
-- Pagination and Pitch index, separate from homepage.
+- Style error alerts to use Bootstrap alerts on pages
 - OAuth login
-- Search
-- Automatic tag
 
 
 
 
-MEDIUM TERM
-----------
+Medium term
+------------
 
 - Categories of pitch:
     - business project
@@ -37,7 +34,7 @@ MEDIUM TERM
 
 
 
-NICE TO HAVE
-------------
+Nice-to-have
+-------------
 
 - Alternate colours of tag: same categories as StartupWeeked stickers!
